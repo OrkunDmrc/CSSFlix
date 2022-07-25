@@ -1,0 +1,1372 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>CSSFLIX</title>
+    <link rel="icon" href="MainPagePicture/icons8-css-48.png">
+    <link rel="stylesheet" href="mainStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+        integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #141414;
+            padding: 0;
+            margin: 0;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif !important;
+        }
+
+        .nav-bar-color {
+            background-color: rgba(39, 32, 32, 1);
+            height: 4.24em;
+            width: 100%;
+            /* display: none; */
+            z-index: 0;
+        }
+
+        #nav-container {
+            width: auto;
+            height: 5rem;
+            padding: 0.5em 3em 0.5em 3em;
+            display: flex;
+            position: sticky;
+            font-size: large;
+            font-weight: 500;
+            bottom: 0px;
+        }
+
+        #nav-container div:nth-last-of-type(1) {
+            flex-grow: 1;
+        }
+
+        #nav-container div img {
+            height: 3em;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .nav-list-item a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav-list-item {
+            padding: 0em 0.5em;
+            font-size: large;
+        }
+
+        .nav-tool-bar {
+            display: flex;
+            flex-grow: 10;
+            justify-content: flex-end;
+            list-style-type: none;
+        }
+
+        .nav-tool-bar li a i {
+            padding-left: 2em;
+            font-size: x-large;
+            color: white;
+        }
+
+        .fa-solid .fa-magnifying-glass {
+            position: fixed;
+            top: 0;
+        }
+
+        .icon-search {
+            height: 2em;
+            width: 20em;
+            position: fixed;
+            top: 1.9em;
+            right: 17em;
+            display: none;
+        }
+
+        .icon-display-search {
+            display: block;
+        }
+
+        .icon-bell {
+            display: flex;
+            font-family: Arial, Helvetica, sans-serif !important;
+            width: 16em;
+            background-color: rgba(39, 32, 32, 1);
+            padding: 0.5em;
+            position: fixed;
+            right: 2em;
+            top: 3em;
+            display: none;
+        }
+
+        .icon-bell div {
+            font-size: medium;
+            font-weight: 400;
+            padding-left: 2%;
+            padding-top: 1%;
+            margin: 0;
+        }
+
+        .icon-bell div p {
+            font-size: small;
+            padding-bottom: 0.25em;
+            margin-top: 0.25em;
+            margin-bottom: 0em;
+            color: darkgray;
+        }
+
+        .icon-display-bell {
+            display: flex;
+        }
+
+        .nav-tool-bar .smile-icon {
+            transform: scale(0.65);
+        }
+
+        .smile-icon {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: -2em;
+            right: -2em;
+            padding: 0.5em;
+            display: none;
+            background-color: rgba(39, 32, 32, 1);
+        }
+
+        .icon-display-smile {
+            display: block;
+        }
+
+        .smile-icon div {
+            display: flex;
+            align-items: center;
+            height: 3em;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 0.5em;
+            /* display: none; */
+        }
+
+        .smile-icon div div {
+            margin: 0 1em;
+            font-size: xx-large;
+        }
+
+        .main-cover {
+            background-image: url(MainPagePicture/rickAndMortyMainPicture.jpg);
+            background-size: cover;
+            height: 43em;
+        }
+
+        .main-cover-button {
+            display: block;
+        }
+
+        .main-cover-p-button a {
+            color: #202020;
+        }
+
+        .main-cover-p-button img {
+            position: relative;
+            top: 10em;
+            left: 4em;
+            width: 20em;
+        }
+
+        .main-cover-p-button>p {
+            position: relative;
+            top: 6em;
+            left: 3em;
+            width: 18em;
+            font-size: x-large;
+        }
+
+        .main-cover-p-button button {
+            padding: 0.5em 1em;
+            border-radius: 10%;
+            background-color: white;
+            font-size: medium;
+            font-weight: 700;
+            position: relative;
+            top: 8em;
+            left: 4.5em;
+        }
+
+        .main-cover-p-button button:nth-last-of-type(1) {
+            background-color: darkgray;
+        }
+
+        .main-cover-p-button button:nth-last-of-type(1) a {
+            color: white;
+        }
+
+        .section-container {
+            display: block;
+
+        }
+
+        .section-container-h2 {
+            margin: 1em 3.25em;
+            font-size: xx-large;
+        }
+
+        .contents-list {
+            padding: 0%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .content-list {
+            list-style-type: none;
+            display: flex;
+        }
+
+        .content-item {
+            display: flex;
+        }
+
+        .content-item-ul {
+            list-style-type: none;
+            flex-basis: 1em;
+        }
+
+        .content-item-vid img {
+            width: 20em;
+        }
+
+        .content-item-other {
+            display: none;
+        }
+
+        /* content hover item*/
+        .content-item-ul:hover {
+            transition: 1s ease-out;
+            transform: scale(1.5);
+        }
+
+        .content-item-ul:hover .content-item-other {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: auto;
+            background-color: rgb(0, 0, 0);
+            height: 3.5em;
+        }
+
+        .content-item-other i {
+            color: white;
+            font-size: x-large;
+        }
+
+        .content-item-ul section {
+            display: none;
+        }
+
+        .content-item-other i:hover {
+            color: gray;
+        }
+
+        .content-item section {
+            margin: 0 10%;
+            font-weight: bolder;
+            justify-content: space-between;
+            background-color: rgb(0, 0, 0);
+            display: none;
+        }
+
+        .content-item-ul:hover section {
+            display: flex;
+        }
+
+        .content-item section:nth-of-type(1) div:nth-of-type(1) {
+            color: green;
+            font-weight: bold;
+        }
+
+        .content-item section:nth-of-type(1) div:nth-of-type(2) {
+            border: 0.1em solid white;
+        }
+
+        .content-item section:nth-of-type(1) div:nth-of-type(4) {
+            font-size: 0.85em;
+            border: 0.05em solid white;
+            align-self: center;
+            padding: 0.05em;
+        }
+
+        .content-item section:nth-of-type(2) {
+            justify-content: flex-start;
+        }
+
+        .content-item section:nth-of-type(2) div {
+            margin-top: 0.1em;
+            margin-right: 0.5em;
+        }
+
+        /*FOOTER*/
+        .main-footer {
+            display: flex;
+            flex-direction: column;
+            width: auto;
+            font-size: larger;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-icon div {
+            display: inline-block;
+        }
+
+        .footer-icon div {
+            padding: 0 0.5em 0 0.5em;
+        }
+
+        .main-footer a {
+            text-decoration: none;
+            color: grey;
+        }
+
+        .main-footer section section {
+            display: inline-block;
+            margin: 0.5em;
+        }
+
+        .main-footer section section div {
+            margin: 1em 2em;
+        }
+
+        .main-footer section .footer-border-text {
+            padding: 0.5em;
+            display: block;
+        }
+
+        .main-footer section .footer-border-text a {
+            border: 0.18em solid grey;
+        }
+
+        section .footer-copy-right {
+            display: block;
+            margin-bottom: 2em;
+        }
+
+        #footer-copy-right {
+            margin-bottom: 2em;
+        }
+
+        .footer-column-text div :hover {
+            text-decoration: underline 0.15em grey;
+        }
+
+        video {
+            width: 23em;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #iframeDiv{
+            display:none;
+            /*visibility:hidden;*/
+            position:absolute;
+            width:100vw;
+            display:flex;
+            justify-content: center;
+            z-index:1;
+            background-color:rgba(39, 32, 32, 0.5);
+        }
+        #iframeKendi{
+            display:none;
+        }
+        #kapat{
+            display:none;
+            /*visibility:hidden;*/
+            color:red;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="iframeDiv">
+        <iframe id="iframeKendi" src="CSSFlixGosterim.html" width="70%" height="650px" style="border:1px solid black;">
+        </iframe>
+        <button id="kapat" onclick="iframeKapat()">X</button>
+    </div>
+    <section class="main-cover">
+        <nav onscroll="navColorChanger()">
+            <section id="nav-container">
+                <div>
+                    <img src="MainPagePicture/logo.png" alt="logo">
+                </div>
+                <div>
+                    <ul class="nav-list">
+                        <li class="nav-list-item"><a href="#">Anasayfa</a></li>
+                        <li class="nav-list-item"><a href="#">Diziler</a></li>
+                        <li class="nav-list-item"><a href="#">Filmler</a></li>
+                        <li class="nav-list-item"><a href="#">Yeni ve Popüler</a></li>
+                        <li class="nav-list-item"><a href="#">Listem</a></li>
+                        <li class="nav-list-item"><a href="#">Seslendirme ve Altyazı</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="nav-tool-bar">
+                        <li><a href="#"><i class="fa-solid fa-magnifying-glass" onclick="displayNavSearchIcon()">
+                                    <input type="search" class="icon-search" id="icon-search">
+                                </i></a></li>
+                        <li><a href="#"><i class="fa-solid fa-bell" onclick="displayNavBellIcon()">
+                                    <div class="icon-bell" id="icon-bell">
+                                        <img src="MainPagePicture/bellİconPicture.png">
+                                        <div>CSSFlix'te Geri Sayım Başlasın Yakında Yayınlnacak İçerikleri Keşfedin.
+                                            <p>1 Saat Önce</p>
+                                        </div>
+                                    </div>
+                                </i></a></li>
+                        <li><a href="#"><i class="fa-regular fa-face-smile" onclick="displayNavSmile()">
+                                    <div class="smile-icon" id="not-smile">
+                                        <div>
+                                            <img src="MainPagePicture/profile-picture/2.PNG">
+                                            <div>Melike</div>
+                                        </div>
+                                        <div>
+                                            <img src="MainPagePicture/profile-picture/3.PNG">
+                                            <div>Emre</div>
+                                        </div>
+                                        <div>
+                                            <img src="MainPagePicture/profile-picture/4.PNG">
+                                            <div>Melih</div>
+                                        </div>
+                                        <div>
+                                            <img src="MainPagePicture/profile-picture/1.PNG">
+                                            <div>Zehra</div>
+                                        </div>
+                                        <div>
+                                            <i class="fa-solid fa-pencil fa-2xl"></i>
+                                            <div>Profil Yonetimi</div>
+                                        </div>
+                                        <div>
+                                            <i class="fas fa-regular fa-user-large"></i>
+                                            <div>Hesap</div>
+                                        </div>
+                                        <div>
+                                            <i class="fa-regular fa-circle-question"></i>
+                                            <div>Yardım Merkezi</div>
+                                        </div>
+                                        <div>
+                                            <div>CSSFlix oturumunu kapat</div>
+                                        </div>
+
+                                    </div>
+                                </i></a></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="main-cover-p-button">
+                <img src="MainPagePicture/rickAndMortyText.webp" alt="">
+                <p>Parlak zekalı fakat alkolik bilim adamı Rick, başka dünyalara ve alternatif boyutlara çılgın
+                    kaçamaklar yaparken huysuz
+                    torunu Morty'i de zorla yanında götürür.</p>
+                <button type="button"><a href="#"><i class="fa-solid fa-play"></i> Oynat</a></button>
+                <button type="button" onclick="iframeAc()"><a href="#"><i class="fas fa-regular fa-circle-info"></i> Daha
+                        Fazla Bilgi</a></button>
+            </section>
+        </nav>
+    </section>
+    <main>
+        <section class="section-container">
+            <h2 class="section-container-h2">CSSFlix'te Popüler</h2>
+            <ul class="contents-list">
+                <li class="content-item">
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/AfterLife.jpg" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/alteredCarbon.jpg" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/betterCallSoul.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/blackMirror.jpg" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/catchMeIfYouCan.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section class="section-container">
+            <h2 class="section-container-h2">Diziler</h2>
+            <ul class="contents-list">
+                <li class="content-item">
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/dark.jpg" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/elysiyum.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/fightClub.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/friends.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/gravity.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section class="section-container">
+            <h2 class="section-container-h2">Filmler</h2>
+            <ul class="contents-list">
+                <li class="content-item">
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/harryPotter.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/iAmMother.jpg" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/iBoy.jpg" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/inception.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/interstellar.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section-container">
+            <h2 class="section-container-h2">Belgeseller</h2>
+            <ul class="contents-list">
+                <li class="content-item">
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/inTime.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/joker.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/friends.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/lucy.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/moneyHeist.jpg" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section class="section-container">
+            <h2 class="section-container-h2">Gerilim Dizileri</h2>
+            <ul class="contents-list">
+                <li class="content-item">
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/mrRobots.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/next.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/ockly99.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/oneDay.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/outlander.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section class="section-container">
+            <h2 class="section-container-h2">Aksiyon Dizileri</h2>
+            <ul class="contents-list">
+                <li class="content-item">
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/passegers.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/peakyBlinders.jpg" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/rickAndMorty2.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/seinfeld.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/sherlock.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section class="section-container">
+            <h2 class="section-container-h2">Bilim Kurgu</h2>
+            <ul class="contents-list">
+                <li class="content-item">
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/suits.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/theEternalSunhineOfSpotlessMind.webp"
+                                alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/vForVandetta.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/timeless.webp" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                    <ul class="content-item-ul">
+                        <li class="content-item-vid"><img src="MainPagePicture/you.jpg" alt=""></li>
+                        <li class="content-item-other">
+                            <a href="#"><i class="fa-regular fa-circle-play"></i></a>
+                            <a href="#"><i class="fas fa-regular fa-circle-plus"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
+                            <a href="#"><i class="fa-solid fa-thumbs-down"></i></a>
+                            <a href="#"><i class="fa-solid fa-caret-down"></i></a>
+                        </li>
+                        <section>
+                            <div>86% Match</div>
+                            <div>18+</div>
+                            <div>1H 50M</div>
+                            <div>HD</div>
+                        </section>
+                        <section>
+                            <div>Aksiyon</div>
+                            <div>Bilim Kurgu</div>
+                            <div>Macera</div>
+                            <div></div>
+                        </section>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <br><br><br><br><br>
+    <footer class="main-footer">
+        <section class="footer-icon">
+            <div><a href="#"><i class="fa-brands fa-facebook-f fa-2x"></i></a></div>
+            <div><a href="#"><i class="fa-brands fa-instagram fa-2x"></i></a></div>
+            <div><a href="#"><i class="fa-brands fa-twitter fa-2x"></i></a></div>
+            <div><a href="#"><i class="fa-brands fa-youtube fa-2x"></i></a></div>
+        </section>
+        <section class="footer-column">
+            <section class="footer-column-text">
+                <div><a href="#">Sesli Betimleme</a></div>
+                <div><a href="#">Yatırımcı İlişkileri</a></div>
+                <div><a href="#">Yasal Hükümler</a></div>
+            </section>
+            <section class="footer-column-text">
+                <div><a href="#">Yardım Merkezi</a></div>
+                <div><a href="#">İş İmkanları</a></div>
+                <div><a href="#">Çerez Tercihleri</a></div>
+            </section>
+            <section class="footer-column-text">
+                <div><a href="#">Hediye Kartları</a></div>
+                <div><a href="#">Kullanım Koşulları</a></div>
+                <div><a href="#">Kurumsal Bilgiler</a></div>
+            </section>
+            <section class="footer-column-text">
+                <div><a href="#">Medya Merkezi</a></div>
+                <div><a href="#">Gizlilik</a></div>
+                <div><a href="#">Bize Ulaşın</a></div>
+            </section>
+            <section class="footer-border-text"><a href="#">Hizmet Koşulları</a></section>
+            <section id="footer-copy-right" class="footer-copy-right"><a href="#">&copy;2022 CSSFLIX, Inc
+                    {9f33cd63-2f55-4a66-bb77-27fef9cbe523}</a></section>
+        </section>
+    </footer>
+    <script type="text/javascript">
+        function displayNavSmile() {
+            document.getElementById("not-smile").classList.toggle("icon-display-smile")
+        }
+        function displayNavBellIcon() {
+            document.getElementById("icon-bell").classList.toggle("icon-display-bell")
+        }
+        function displayNavSearchIcon() {
+            document.getElementById("icon-search").classList.toggle("icon-display-search")
+        }
+        function iframeAc(){
+            document.getElementById("iframeDiv").style.display = "flex";
+            document.getElementById("kapat").style.display = "inline";
+            document.getElementById("iframeKendi").style.display = "inline";
+            document.body.style.overflow = "hidden";
+        }
+        function iframeKapat(){
+            document.getElementById("iframeDiv").style.display = "none";
+            document.getElementById("kapat").style.display = "none";
+            document.getElementById("iframeKendi").style.display = "none";
+            document.body.style.overflow = "visible";
+            var iframe = document.getElementById("iframeKendi");
+            var video = iframe.contentWindow.document.getElementsByTagName('video')[0];
+            video.pause();
+            //document.getElementById("iframeKendi").contentWindow.document.getElementById("anaVideo").pause();
+        }
+    </script>
+</body>
+
+</html>

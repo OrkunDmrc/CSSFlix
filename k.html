@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CSSFlix Profiller</title>
+    <link rel="shortcut icon" href="img/icon-css.png" type="image/x-icon">
+    <style type="text/css">
+        body {
+            background-color: black;
+          }
+        p{
+            text-decoration: none;
+         }
+        #baslik {
+            color: white;
+            font-size: 60px;
+            font-family: Arial;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+        input {
+            color: grey;
+            border: solid 2px grey;
+            font-size: 25px;
+            background-color: black;
+            position: absolute;
+            left: 40%;
+            top: 105%;
+            padding: 15px;
+        }
+        p {
+            color: grey;
+            font-size: 20px;
+            font-family: Arial;
+            text-align: center;
+        }
+        #profil {
+            flex-direction: column;
+            padding: 10px;
+            display: inline-block;
+        }
+        #profil img:hover  {
+            border: 2px solid white;
+        }
+        td div:hover p  {
+            color: white;
+        }
+        #ortalama {
+            position: absolute;
+            left: 30%;
+            top: 25%;
+        }
+        #logo img
+        {
+            height: 54px;
+            width: 142.531px;
+            margin: 9px 54px 54px 9px;
+        }
+          /* Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) {
+            div p{
+                font-size: 30px;
+            }
+            table tr {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column ;
+            float: left;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+        }
+        input{
+            width: 100px;
+            height: 100px;
+            font-size: 10px;
+           
+        }
+         }
+        @media only screen and (max-width:1000px) {
+            div p{
+            font-size: 30px;
+            }
+            table tr {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction:column;
+            
+                    }
+        
+          
+    }
+    </style>
+</head>
+<body>
+    <div id="logo"><img src="img/cssflix.png"/></div>
+    <div id="ortalama">
+        <div id="baslik"> Kim izliyor?</div><br /><table align="center">
+            <tr>
+                <td><a href="mainIndex.html"><div id="profil"><img src="img/2.png" /></a><p>Büşra</p></div></td>
+                <td><a href="mainIndex.html"><div id="profil"><img src="img/3.png" /></a><p>Emre</p></div></td>
+                <td><a href="mainIndex.html"> <div id="profil"><img src="img/4.png" /></a><p>Melih</p></div></td>
+                <td><a href="mainIndex.html"><div id="profil"><img src="img/1.png" /></a><p>Zehra</p></div></td>
+            </tr><tr><td><input type="button" value="Profil Yönetimi" /></td></tr>
+        </table> <div></div>
+    </div>
+
+</body>
+</html>

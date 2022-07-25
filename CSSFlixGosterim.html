@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSSFlixGosterim</title>
+    <style type="text/css">
+        @media only screen and (min-device-width : 1400px){
+            html{
+                font-size:19px;
+            }
+            #anaVideo{
+                height:99vh;
+                width:99vw;
+            }
+            #gecis{
+                top:45vh;
+            }
+        }
+        @media only screen and (min-device-width : 1200px) and (max-width:1400px){
+            html{
+                font-size:14px;
+            }
+            #anaVideo{
+                height:99vh;
+                width:99vw;
+            }
+            #gecis{
+                top:42.5vh;
+            }
+        }
+        @media only screen and (min-width:992px) and (max-width:1199px){
+            html{
+                font-size:13px;
+            }
+            #anaVideo{
+                height:84vh;
+                width:99vw;
+            }
+            #gecis{
+                top:35vh;
+            }
+        }
+        @media only screen and (min-width:768px) and (max-width:991px){
+            html{
+                font-size:12px;
+            }
+            #anaVideo{
+                height:83vh;
+                width:99vw;
+            }
+            #gecis{
+                top:35vh;
+            }
+        }
+        @media only screen and (min-width:576px) and (max-width:767px){
+            html{
+                font-size:12px;	
+            }
+            #anaVideo{
+                height:65vh;
+                width:99vw;
+            }
+            #gecis{
+                top:18vh;
+            }
+        }
+        @media only screen and (max-width:574px){
+            html{
+                font-size:12px;	
+            }
+            #anaVideo{
+                height:49vh;
+                width:99vw;
+            }
+            #gecis{
+                top:0vh;
+            }
+        }
+        body{
+            overflow-x: hidden;
+            margin: 0px;
+            padding: 0px;
+            background-color: rgb(41, 41, 41);
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+            /*background-image: url("Resimler/rickandmorty.jpg");*/
+        }
+        #anaVideo{
+            position:relative;
+            left:0px;
+            top:0px;
+            background-color:rgb(41, 41, 41);
+        }
+        .birPxBorder{
+            border:1px solid white;
+            font-size: 1.5rem;
+        }
+        #gecis{
+            width: 99vw;
+            position:absolute;
+            left:0px;
+            z-index:1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #kontrolDiv{
+            order:1;
+            display:flex;
+            align-items:center;
+            justify-content: center;
+            width:101%;
+            background:linear-gradient(to top,rgb(41, 41, 41),transparent);
+            padding-top:7rem;
+            padding-bottom:7rem;
+        }
+        #kontrolDiv Button{
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        #ilkPlay{
+            width:13%;
+            height: 7vh;
+            margin-right:0.5rem;
+        }
+        .yuvarlakButton{
+            width: 7vh;
+            height: 7vh;
+            border:2px solid rgba(255,255,255,0.8);;
+            border-radius: 50%;
+            background-color: rgba(0,0,0,0.5);
+            margin-left: 0.5rem;
+            margin-right:0.5rem;
+        }
+        .yuvarlakButton i{
+            color:rgba(255,255,255,0.8);
+        }
+        .yuvarlakButton:hover{
+            background-color: rgba(0,0,0,0.8);
+            transform:scale(1.2);
+        }
+        #mute{
+            margin-left: 50%;
+        }
+        #aciklamaDiv{
+            order:2;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width:101%;
+            height: 20vh;
+            background-color: rgb(41, 41, 41);;
+        }
+        #aciklamaDivOzet{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            width:59vw;
+        }
+        #aciklamaDivKadro{
+            width:29vw;
+            font-size: 1.1rem;
+        }
+        #bolumlerDiv{
+            margin-top: 3rem;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #baslik{
+            display:flex;
+            width:95%;
+            justify-content: space-evenly;
+            font-size: 2rem;
+            margin-bottom:0.5rem;
+            margin-top: 4rem;
+        }
+        #baslik select{
+            background-color: rgb(41, 41, 41);
+            color:white;
+            border:1px solid gray;
+            width:15%;
+            height: 2.5rem;
+            margin-left:70%;
+        }
+        .bolumler{
+            display:flex;
+            align-items: center;
+            padding:1%;
+            border-top:1px solid gray;
+            border-bottom:1px solid gray;
+            width:95%;
+            font-size: 2.5rem;
+        }
+        .bolumler:hover{
+            background-color: rgb(68, 68, 68);
+        }
+        .bolumler img{
+            border-radius: 5px;
+            margin-left: 3%;
+            margin-right:3%;
+        }
+        .bolumler Div{
+            width:inherit;
+        }
+        .bolumBasligi{
+            font-size:2rem;
+            margin-bottom: 0.5rem;
+        }
+        .bolumAciklamasi{
+            color:lightgrey;
+            font-size:1rem;
+            height: 5rem;
+        }
+        #benzerleri{
+            display: flex;
+            flex-wrap:wrap;
+            justify-content: space-evenly;
+        }
+        .benzerleriDiv{
+            margin:1%;
+            background-color: rgb(83, 83, 83);
+            width: 30%;
+            height: 30rem;
+            display:flex;
+            flex-direction: column;
+        }
+        .benzerleriDiv img{
+            width:100%;
+        }
+        .benzerBaslikDiv{
+            margin:1rem;
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .benzerleriDiv p{
+            margin:1%;
+            font-size:1.5rem;
+        }
+        footer{
+            border-top:2px solid gray;
+            margin: 0 2rem;
+            z-index:1;
+            font-size: 1.5rem;
+        }
+        footer div{
+            text-align: center;
+            margin-top:-1.1rem;
+            background:linear-gradient(to top,rgb(41, 41, 41),transparent);
+        }
+        #benzerDiv9, #benzerDiv8, #benzerDiv7{
+            display:none;
+        }
+        footer span{
+            color:gray;
+        }
+    </style>
+    <!--<link rel="stylesheet" href="CSSFlixGosterim.css">-->
+    <script src="https://kit.fontawesome.com/b4e1b0c4e0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div style="text-align: center;">
+        <video ondblclick="tamEkranYap()" id="anaVideo" poster="Resimler/rickandmorty.jpg" autoplay>
+            <source src="Videolar/videoplayback.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div id="gecis">
+        <div id="kontrolDiv">
+            <button id="ilkPlay" onclick="ilkPlay()"><i class="fa fa-play"></i> Oynat</button>
+            <button class="yuvarlakButton" onclick="ekle()"><i id="ekle" class="fa-solid fa-plus"></i></button>
+            <button class="yuvarlakButton" onclick="like()"><i id="like" class="fa-regular fa-thumbs-up"></i></button>
+            <button class="yuvarlakButton" onclick="disLike()"><i id="dislike" class="fa-regular fa-thumbs-down"></i></button>
+            <button id="mute" class="yuvarlakButton" onclick="mute()"><i id="ses" class="fa-solid fa-volume-high"></i></button>
+        </div>
+        <div id="aciklamaDiv">
+            <div id="aciklamaDivOzet">
+                <div style="width:100%; font-size: 1.5rem;"><span style="color:green">%98 Eşleşme</span> 2021
+                    <span class="birPxBorder"> <i class="fa-solid fa-plus fa-xs"></i>18</span> 5 Sezon <span class="birPxBorder">HD</span></div>
+                <div style="margin-top:2rem; font-size: 1.5rem;">
+                    Parlak zekalı fakt alkolik bilim adamı Rick, başka dünyalara ve alternatif boyutlara çılgın kaçamaklar yaparken huysuz torunu Morty'i de zorla yanında götürür.
+                </div>
+            </div>
+            <div id="aciklamaDivKadro">
+                <span style="color:grey">Oyuncu kadrosu:</span> Justun Roiland, Chris Pamell, Spencer Grammer, <i>daha fazla</i><br/><br/>
+                <span style="color:grey">Türler:</span> Bilim Kurgu Dizisi, Durum Komedileri, Komedi Dizileri<br/><br/>
+                <span style="color:grey">Bu içerik:</span> Abzürt, Sıra Dışı
+            </div>
+        </div>
+    </div>
+    <div id="baslik">
+        <div>Bölümler</div>
+        <select onchange="sezonDegis(this.value)" name="sezonlar">
+            <option value="1">1. Sezon</option>
+            <option value="2">2. Sezon</option>
+            <option value="3">3. Sezon</option>
+        </select>
+    </div>
+    <div>
+        <div id="segme1" class="bolumler">
+            <span>1</span>
+            <img src="Resimler/B_1.JPG">
+            <div>
+                <div class="bolumBasligi"><b>Pilot Bölüm</b></div>
+                <div class="bolumAciklamasi">
+                    Rick, Morty'yi 'mega ağaç' toğumları bulmak için başka
+                    bir boyuta götürür. Jerry ve Beth ise, Rick oğullarına
+                    kötü örnek oluyor diye tartışırlar.
+                </div>
+            </div>
+        </div>
+        <div id="segme2" class="bolumler">
+            <span>2</span>
+            <img src="Resimler/B_2.JPG">
+            <div>
+                <div class="bolumBasligi"><b>Teknolojik Köpek</b></div>
+                <div class="bolumAciklamasi">
+                    Rick, Morty'yi 'mega ağaç' toğumları bulmak için başka
+                    bir boyuta götürür. Jerry ve Beth ise, Rick oğullarına
+                    kötü örnek oluyor diye tartışırlar.
+                </div>
+            </div>
+        </div>
+        <div id="segme3" class="bolumler">
+            <span>3</span>
+            <img src="Resimler/B_3.JPG">
+            <div>
+                <div class="bolumBasligi"><b>Anatomi Parkı</b></div>
+                <div class="bolumAciklamasi">
+                    Rick, Morty'yi 'mega ağaç' toğumları bulmak için başka
+                    bir boyuta götürür. Jerry ve Beth ise, Rick oğullarına
+                    kötü örnek oluyor diye tartışırlar.
+                </div>
+            </div>
+        </div>
+        <div id="segme4" class="bolumler">
+            <span>4</span>
+            <img src="Resimler/B_4.JPG">
+            <div>
+                <div class="bolumBasligi"><b>Sanal Gerçekler</b></div>
+                <div class="bolumAciklamasi">
+                    Rick, Morty'yi 'mega ağaç' toğumları bulmak için başka
+                    bir boyuta götürür. Jerry ve Beth ise, Rick oğullarına
+                    kötü örnek oluyor diye tartışırlar.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="margin-left:3%;  font-size: 2.25rem; margin-top: 1rem;">Benzerleri</div>
+    <div id="benzerleri">
+        <div class="benzerleriDiv">
+            <img src="Resimler/Be_1.JPG">
+            <div class="benzerBaslikDiv">
+                <div>
+                    <span class="birPxBorder">
+                        <i class="fa-solid fa-plus fa-2xs"></i>16</span>  2022
+                </div>
+                <button class="yuvarlakButton" onclick="Ekle2(document.getElementById('arti1'))"><i id="arti1" class="fa-solid fa-plus fa-2xl"></i></button>
+            </div>
+            <p>
+                Matt Groening imzalı bu animasyon Orta Çağ
+                masalında, alaycı bir prenses şarkıcı deniz aygırları,
+                entrikacı soylular, özel bir iblis ve çok daha fazlası
+                ile boğuşuyor.
+            </p>
+        </div>
+        <div class="benzerleriDiv">
+            <img src="Resimler/Be_2.JPG">
+            <div class="benzerBaslikDiv">
+                <div>
+                    <span class="birPxBorder">
+                        <i class="fa-solid fa-plus fa-2xs"></i>16</span>  2022
+                </div>
+                <button class="yuvarlakButton" onclick="Ekle2(document.getElementById('arti2'))"><i id="arti2" class="fa-solid fa-plus fa-2xl"></i></button>
+            </div>
+            <p>
+                Matt Groening imzalı bu animasyon Orta Çağ
+                masalında, alaycı bir prenses şarkıcı deniz aygırları,
+                entrikacı soylular, özel bir iblis ve çok daha fazlası
+                ile boğuşuyor.
+            </p>
+        </div>
+        <div class="benzerleriDiv">
+            <img src="Resimler/Be_3.JPG">
+            <div class="benzerBaslikDiv">
+                <div>
+                    <span class="birPxBorder">
+                        <i class="fa-solid fa-plus fa-2xs"></i>16</span>  2022
+                </div>
+                <button class="yuvarlakButton" onclick="Ekle2(document.getElementById('arti3'))"><i id="arti3" class="fa-solid fa-plus fa-2xl"></i></button>
+            </div>
+            <p>
+                Matt Groening imzalı bu animasyon Orta Çağ
+                masalında, alaycı bir prenses şarkıcı deniz aygırları,
+                entrikacı soylular, özel bir iblis ve çok daha fazlası
+                ile boğuşuyor.
+            </p>
+        </div>
+        <div class="benzerleriDiv">
+            <img src="Resimler/Be_1.JPG">
+            <div class="benzerBaslikDiv">
+                <div>
+                    <span class="birPxBorder">
+                        <i class="fa-solid fa-plus fa-2xs"></i>16</span>  2022
+                </div>
+                <button class="yuvarlakButton" onclick="Ekle2(document.getElementById('arti4'))"><i id="arti4" class="fa-solid fa-plus fa-2xl"></i></button>
+            </div>
+            <p>
+                Matt Groening imzalı bu animasyon Orta Çağ
+                masalında, alaycı bir prenses şarkıcı deniz aygırları,
+                entrikacı soylular, özel bir iblis ve çok daha fazlası
+                ile boğuşuyor.
+            </p>
+        </div>
+        <div class="benzerleriDiv">
+            <img src="Resimler/Be_2.JPG">
+            <div class="benzerBaslikDiv">
+                <div>
+                    <span class="birPxBorder">
+                        <i class="fa-solid fa-plus fa-2xs"></i>16</span>  2022
+                </div>
+                <button class="yuvarlakButton" onclick="Ekle2(document.getElementById('arti5'))"><i id="arti5" class="fa-solid fa-plus fa-2xl"></i></button>
+            </div>
+            <p>
+                Matt Groening imzalı bu animasyon Orta Çağ
+                masalında, alaycı bir prenses şarkıcı deniz aygırları,
+                entrikacı soylular, özel bir iblis ve çok daha fazlası
+                ile boğuşuyor.
+            </p>
+        </div>
+        <div class="benzerleriDiv">
+            <img src="Resimler/Be_3.JPG">
+            <div class="benzerBaslikDiv">
+                <div>
+                    <span class="birPxBorder">
+                        <i class="fa-solid fa-plus fa-2xs"></i>16</span>  2022
+                </div>
+                <button class="yuvarlakButton" onclick="Ekle2(document.getElementById('arti6'))"><i id="arti6" class="fa-solid fa-plus fa-2xl"></i></button>
+            </div>
+            <p>
+                Matt Groening imzalı bu animasyon Orta Çağ
+                masalında, alaycı bir prenses şarkıcı deniz aygırları,
+                entrikacı soylular, özel bir iblis ve çok daha fazlası
+                ile boğuşuyor.
+            </p>
+        </div>
+        <div id="benzerDiv7" class="benzerleriDiv">
+            <img src="Resimler/Be_2.JPG">
+            <div class="benzerBaslikDiv">
+                <div>
+                    <span class="birPxBorder">
+                        <i class="fa-solid fa-plus fa-2xs"></i>16</span>  2022
+                </div>
+                <button class="yuvarlakButton" onclick="Ekle2(document.getElementById('arti7'))"><i id="arti7" class="fa-solid fa-plus fa-2xl"></i></button>
+            </div>
+            <p>
+                Matt Groening imzalı bu animasyon Orta Çağ
+                masalında, alaycı bir prenses şarkıcı deniz aygırları,
+                entrikacı soylular, özel bir iblis ve çok daha fazlası
+                ile boğuşuyor.
+            </p>
+        </div>
+        <div id="benzerDiv8" class="benzerleriDiv">
+            <img src="Resimler/Be_3.JPG">
+            <div class="benzerBaslikDiv">
+                <div>
+                    <span class="birPxBorder">
+                        <i class="fa-solid fa-plus fa-2xs"></i>16</span>  2022
+                </div>
+                <button class="yuvarlakButton" onclick="Ekle2(document.getElementById('arti8'))"><i id="arti8" class="fa-solid fa-plus fa-2xl"></i></button>
+            </div>
+            <p>
+                Matt Groening imzalı bu animasyon Orta Çağ
+                masalında, alaycı bir prenses şarkıcı deniz aygırları,
+                entrikacı soylular, özel bir iblis ve çok daha fazlası
+                ile boğuşuyor.
+            </p>
+        </div>
+        <div id="benzerDiv9" class="benzerleriDiv">
+            <img src="Resimler/Be_1.JPG">
+            <div class="benzerBaslikDiv">
+                <div>
+                    <span class="birPxBorder">
+                        <i class="fa-solid fa-plus fa-2xs"></i>16</span>  2022
+                </div>
+                <button class="yuvarlakButton" onclick="Ekle2(document.getElementById('arti9'))"><i id="arti9" class="fa-solid fa-plus fa-2xl"></i></button>
+            </div>
+            <p>
+                Matt Groening imzalı bu animasyon Orta Çağ
+                masalında, alaycı bir prenses şarkıcı deniz aygırları,
+                entrikacı soylular, özel bir iblis ve çok daha fazlası
+                ile boğuşuyor.
+            </p>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <button class="yuvarlakButton" onclick="acKapa()"><i id="ok" class="fa-solid fa-angle-down fa-xl"></i></button>
+        </div>
+        <h1><b>Rick and Morty</b> Hakında</h1>
+        <p>
+            <span>Yaratıcılar:</span> Dan Harmon, Justin Roiland<br/>
+            <span>Oyuncu Kadrosu:</span>Justin Roiland, Chris Parmel, Spancer Grammer, Sarah Chalke<br/>
+            <span>Türler:</span>Bilim Kurgu Dizisi, Durum Komedileri, Komedi Dizileri, Amerikan Dizileri, Aksiyon ve Mecara Dizileri<br/>
+            <span>Bu İçerik:</span>Absürt, Sıra Dışı<br/>
+            <span>Yetişkinlik Düzeyi:</span>
+            <span style="color:white;" class="birPxBorder"><i class="fa-solid fa-plus fa-2xs"></i>16</span> Şiddet, Cinsellik, argo, Madde Kullanımı 18 yaş üstü izleyiciler için uygundur.<br/>
+        </p>
+    </footer>
+
+    <script>
+        var begendi=false, begenmedi=false, eklendi = false, acik = false;
+        var anaVideo = document.getElementById("anaVideo");
+        var gecis = document.getElementById("gecis").style;
+        var sesButton = document.getElementById("ses").classList;
+        var likeButon = document.getElementById("like").classList;
+        var dislikeButton = document.getElementById("dislike").classList;
+        var ekleButton = document.getElementById("ekle").classList;
+        var baslik = document.getElementById("baslik");
+        var acKapaButton = document.getElementById("ok").classList;
+        var benzerDivler = [
+                document.getElementById("benzerDiv7").style,
+                document.getElementById("benzerDiv8").style,
+                document.getElementById("benzerDiv9").style
+            ];
+        var segmelerSpan = [
+            document.querySelector("#segme1 span"),
+            document.querySelector("#segme2 span"),
+            document.querySelector("#segme3 span"),
+            document.querySelector("#segme4 span")
+        ];
+        var segmelerImg = [
+            document.querySelector("#segme1 img"),
+            document.querySelector("#segme2 img"),
+            document.querySelector("#segme3 img"),
+            document.querySelector("#segme4 img")
+
+        ];
+        var segmelerBolumBasligi = [
+            document.querySelector("#segme1 b"),
+            document.querySelector("#segme2 b"),
+            document.querySelector("#segme3 b"),
+            document.querySelector("#segme4 b")
+        ];
+        function ilkPlay(){
+            anaVideo.requestFullscreen();
+            anaVideo.play();
+            anaVideo.setAttribute("controls","");
+            gecis.position = "relative";
+            gecis.top = "0";
+            gecis.height = "10vh";
+            gecis.width = "98%";
+            document.getElementById("aciklamaDiv").style.order = 1;
+            document.getElementById("kontrolDiv").style.order = 2;
+            document.getElementById("kontrolDiv").style.padding = "1rem 0";
+            document.getElementById("ilkPlay").style.display = "none";
+            document.getElementById("mute").style.display = "none";
+            document.getElementById("baslik").style.marginTop = "10rem";
+        }
+        function ekle(){
+            if(eklendi){
+                ekleButton.replace("fa-minus","fa-plus");
+                eklendi=false;
+            }else{
+                ekleButton.replace("fa-plus","fa-minus");
+                eklendi=true;
+            }
+        }
+        function Ekle2(gelenElement){
+            if(gelenElement.className == "fa-solid fa-plus fa-2xl"){
+                gelenElement.classList.replace("fa-plus","fa-minus");
+            }else{
+                gelenElement.classList.replace("fa-minus","fa-plus");
+            }
+        }   
+        function like(){
+            if(begendi){
+                likeButon.replace("fa-solid","fa-regular");
+                begendi = false;
+            }else{
+                likeButon.replace("fa-regular","fa-solid");
+                begendi = true;
+            }
+            dislikeButton.replace("fa-solid","fa-regular");
+            begenmedi = false;
+        }
+        function disLike(){
+            if(begenmedi){
+                dislikeButton.replace("fa-solid","fa-regular");
+                begenmedi=false;
+            }else{
+                dislikeButton.replace("fa-regular","fa-solid");
+                begenmedi=true;
+            }
+            likeButon.replace("fa-solid","fa-regular");
+            begendi=false;
+        }
+        function mute(){
+            if(anaVideo.muted){
+                anaVideo.muted=false;
+                sesButton.replace("fa-volume-xmark","fa-volume-high");
+            }else{
+                anaVideo.muted=true;
+                sesButton.replace("fa-volume-high","fa-volume-xmark");
+            }
+        }
+        function sezonDegis(sezon){
+            if(sezon == 1){
+                segmelerSpan[0].innerHTML = "1";
+                segmelerImg[0].src = "Resimler/B_1.JPG";
+                segmelerBolumBasligi[0].innerHTML = "Pilot Bölüm";
+                segmelerSpan[1].innerHTML = "2";
+                segmelerImg[1].src = "Resimler/B_2.JPG";
+                segmelerBolumBasligi[1].innerHTML = "Teknolojik Köpek";
+                segmelerSpan[2].innerHTML = "3";
+                segmelerImg[2].src = "Resimler/B_3.JPG";
+                segmelerBolumBasligi[2].innerHTML = "Anatomi Parkı";
+                segmelerSpan[3].innerHTML = "4";
+                segmelerImg[3].src = "Resimler/B_4.JPG";
+                segmelerBolumBasligi[3].innerHTML = "Sanal Gerçekler";
+            }else if(sezon == 2){
+                segmelerSpan[0].innerHTML = "5";
+                segmelerImg[0].src = "Resimler/B_4.JPG";
+                segmelerBolumBasligi[0].innerHTML = "Hizmetinizdeyiz";
+                segmelerSpan[1].innerHTML = "6";
+                segmelerImg[1].src = "Resimler/B_3.JPG";
+                segmelerBolumBasligi[1].innerHTML = "Aşk İksiri";
+                segmelerSpan[2].innerHTML = "7";
+                segmelerImg[2].src = "Resimler/B_2.JPG";
+                segmelerBolumBasligi[2].innerHTML = "Gazorpzorp'u Büyütmek";
+                segmelerSpan[3].innerHTML = "8";
+                segmelerImg[3].src = "Resimler/B_1.JPG";
+                segmelerBolumBasligi[3].innerHTML = "Rick'siz Dakikaki";
+            }else if(sezon == 3){
+                segmelerSpan[0].innerHTML = "9";
+                segmelerImg[0].src = "Resimler/B_2.JPG";
+                segmelerBolumBasligi[0].innerHTML = "Rick'siz Bir Şey Geliyor";
+                segmelerSpan[1].innerHTML = "10";
+                segmelerImg[1].src = "Resimler/B_1.JPG";
+                segmelerBolumBasligi[1].innerHTML = "Ricki'inci Türden Rick'leşmeler";
+                segmelerSpan[2].innerHTML = "11";
+                segmelerImg[2].src = "Resimler/B_4.JPG";
+                segmelerBolumBasligi[2].innerHTML = "Rick'sli İşler";
+                segmelerSpan[3].innerHTML = "12";
+                segmelerImg[3].src = "Resimler/B_3.JPG";
+                segmelerBolumBasligi[3].innerHTML = "Ne Rick'miş?";
+            }
+        }
+        function acKapa(){
+            if(acik){
+                acKapaButton.replace("fa-angle-up","fa-angle-down");
+                for(let i = 0; i < 3; i++){
+                    benzerDivler[i].display = "none";
+                    acik = false;
+                }
+            }else{
+                acKapaButton.replace("fa-angle-down","fa-angle-up");
+                for(let i = 0; i < 3; i++){
+                    benzerDivler[i].display = "flex";
+                    acik = true;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

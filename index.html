@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSSFlix</title>
+   
+    <link rel="shortcut icon" href="img/icon-css.png" type="image/x-icon">
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background: #000;
+
+}
+
+.container .head{
+    position: absolute;
+    top: 0;
+    left: 0%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 50px;
+    z-index: 1000000;
+}
+
+.container .head img{
+    width: 13%;
+    margin-top: 5px;
+}
+
+.container .head a{
+    color: #fff;
+    text-decoration: none;
+    background-color: #e50914;
+    padding: 8px 18px;
+    border-radius: 5px;
+}
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    z-index: 1;
+    background: linear-gradient(to bottom, #000, transparent);
+}
+
+.banner:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    z-index: 1;
+    background: linear-gradient(to top, #000, transparent);
+}
+.banner .fit{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0;
+    object-fit: cover;
+}
+
+.banner .box{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.banner .box .heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.banner .box .heading h2{
+    font-size: 3.125rem;
+    color: #fff;
+    letter-spacing: 2px;
+    width: 80%;
+}
+
+.banner .box .heading h5{
+    font-size: 1.625rem;
+    color: #fff;
+    font-weight: 400;
+    padding: 1rem 0;
+}
+
+.banner .box .heading p{
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 500;
+    padding: 15px 0;
+    padding-bottom: 20px;
+}
+
+.banner .box .search{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner .box .search input{
+    font-size: 16px;
+    border: 1px solid #8c8c8c;
+    outline: none;
+    color: #000;
+    border-radius: 4px;
+    padding-bottom: 10px 10px 0 0;
+    min-width: 400px;
+    height: 60px;
+    align-items: center;
+}
+
+.banner .box .search a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+    border-radius: 2px;
+    background: #e50914;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.45);
+    font-size: 1.625rem;
+    line-height: 60px;
+    /* min-width: 310px; */
+    padding: 0 30px;
+}
+
+.part1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 4rem;
+    border-bottom: 0.6rem solid #111;
+}
+
+.part1 .talk{
+    width: 40%;
+}
+.part1 .talk h1{
+    font-size: 3.3rem;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    color: #fff;
+}
+.part1 .talk p{
+    font-size: 1.7rem;
+    color: #fff;
+}
+
+.part1 .img{
+    width: 45%;
+}
+.part1 .img img{
+    width: 100%;
+}
+.part2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 4rem;
+    border-bottom: 0.6rem solid #111;
+}
+
+.part2 .talk{
+    width: 48%;
+}
+.part2 .talk h1{
+    font-size: 3.3rem;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    color: #fff;
+}
+.part2 .talk p{
+    font-size: 1.7rem;
+    color: #fff;
+}
+
+.part2 .img{
+    width: 45%;
+}
+.part2 .img img{
+    width: 100%;
+}
+
+.list{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.list h1{
+    color: #fff;
+    font-size: 3rem;
+    padding: 3rem 0 4rem 0;
+}
+
+.title{
+    background-color: #303030;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.icon{
+    width: 20px;
+    position: relative;
+}
+
+.icon::before, .icon::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background: #fff;
+    top: -1.5px;
+}
+.icon::after{
+    transform: rotate(90deg);
+    transition: 0.5s linear;
+}
+.title {
+    width: 1141.8px;
+}
+.text{
+    background-color: #303030;
+    line-height: 35px;
+    margin: 3px 0;
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: 400;
+    display: none;
+}
+.open{
+    display: block;
+}
+
+.item:target .text{
+    opacity: 1;
+    height: auto;
+    padding: 20px 35px;
+    margin: 0;
+    border-top: 2px solid #000;
+    margin-bottom: 6px;
+}
+.item:target .icon::after{
+    transform: rotateY(90deg);
+
+}
+.banner2{
+    border-bottom: 0.6rem solid #111;
+}
+.banner2 .box{
+    margin: 4rem 0;
+
+}
+
+.banner2 .box .heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.banner2 .box .heading h2{
+    font-size: 3.125rem;
+    color: #fff;
+    letter-spacing: 2px;
+    width: 80%;
+}
+
+.banner2 .box .heading h5{
+    font-size: 1.625rem;
+    color: #fff;
+    font-weight: 400;
+    padding: 1rem 0;
+}
+
+.banner2 .box .heading p{
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 500;
+    padding: 15px 0;
+    padding-bottom: 20px;
+}
+
+.banner2 .box .search{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner2 .box .search input{
+    font-size: 16px;
+    border: 1px solid #8c8c8c;
+    outline: none;
+    color: #000;
+    border-radius: 4px;
+    padding-bottom: 10px 10px 0 0;
+    min-width: 400px;
+    height: 60px;
+    align-items: center;
+}
+
+.banner2 .box .search a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+    border-radius: 2px;
+    background: #e50914;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.45);
+    font-size: 1.625rem;
+    line-height: 60px;
+    /* min-width: 310px; */
+    padding: 0 30px;
+}
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    padding: 4rem 0;
+}
+.footer .one{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    width: 25%;
+}
+
+.footer .one li{
+    padding: 7px 0;
+}
+
+.footer .one li a{
+    color: #ccc;
+    text-decoration: none;
+}
+.footer .one li a:hover{
+    border-bottom: 1px solid #ccc;
+}
+
+@media screen and (max-width: 787px){
+
+    .container .head{
+
+        padding:20px 0 50px; 
+    }
+    .container .head img{
+        width: 20%;
+    }
+    .banner .box .heading h2{
+        font-size: 3.1rem;
+        
+        letter-spacing: 1.5px;
+        width: 100%;
+    }
+    
+    .banner .box .heading h5{
+        font-size: 1.4rem;
+        padding: 0.8rem 0;
+    }
+    
+    .banner .box .heading p{
+        font-size: 1.1rem;
+
+        padding: 13px 0;
+        padding-bottom: 17px;
+    }
+}
+
+@media screen and (max-width: 496px){
+
+}
+.bibi-chevron-right{
+    height: 0.75em;
+    width: 0.35em;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 auto;
+    -moz-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    margin: 0 0 0 0.5em;
+    position: relative;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <div class="head">
+            <img src="LandingPageImg/cssflix.png" alt="">
+            <a href="giris2.html">Oturum aç</a>
+        </div>
+    </section>
+    <section class="banner">
+        <img src="LandingPageImg/back.jpg" class="fit">
+        <div class="box">
+            <div class="heading">
+                <h2>Sınırsız film, dizi ve çok daha fazlası.</h2>
+                <h5>İstediğiniz yerde izleyin. İstediğiniz zaman iptal edin.</h5>
+                <p>İzlemeye hazır mısınız? Üyelik oluşturmak veya üyeliğinize erişmek için e‑posta adresinizi girin.</p>
+            </div>
+            <div class="search">
+                <input type="text" name="" placeholder="E-posta adresi">
+                <a href="#">Başlayın <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-chevron-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                    </svg></a>
+            </div>
+        </div>
+    </section>
+    <section class="part1">
+        <div class="talk">
+            <h1>Televizyonunuzda izleyebilirsiniz.</h1>
+            <p>Akıllı TV, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray oynatıcılar ve daha fazlasında seyredin.</p>
+        </div>
+
+        <div class="img">
+            <img src="LandingPageImg/part1.png" alt="">
+        </div>
+    </section>
+
+    <section class="part2">
+        <div class="img">
+            <img src="LandingPageImg/part2.jpg" alt="">
+        </div>
+        <div class="talk">
+            <h1>Çevrimdışı izlemek için içerikleri indirin.</h1>
+            <p>En sevdiğiniz içerikleri kolayca kaydedin ve her zaman izleyecek bir şeyleriniz olsun.</p>
+        </div>
+
+
+    </section>
+    <section class="part1">
+        <div class="talk">
+            <h1>İstediğiniz her yerde izleyin.</h1>
+            <p>Ekstra ücret ödemeden telefonda, tablette, bilgisayarda, televizyonda sınırsız film ve dizi izleyin.
+            </p>
+        </div>
+
+        <div class="img">
+            <img src="LandingPageImg/part3.png" alt="">
+        </div>
+    </section>
+
+    <section class="part2">
+        <div class="img">
+            <img src="LandingPageImg/part4.png" alt="">
+        </div>
+        <div class="talk">
+            <h1>Çocuklarınız için profiller oluşturun.</h1>
+            <p>Üyeliğinize dâhil olan bu ücretsiz deneyim sayesinde çocuklarınız, sadece onlara özel bir alanda en
+                sevdikleri karakterlerle maceralara atılabilir.
+            </p>
+        </div>
+    </section>
+    <section class="list">
+        <h1>Sıkça Sorulan Sorular</h1>
+        <div class="accordion-menu">
+            <div class="item" id="#item1">
+
+                <a href="#item1" class="title" onclick="displayBlock()">
+                    <span>CSSflix nedir?</span>
+                    <i class="icon"></i>
+                </a>
+                <p id="p1" class="text">CSSflix; internet bağlantılı binlerce cihazda ödüllü diziler, filmler, animeler,
+                    belgeseller ve daha fazlasını içeren geniş bir arşiv sunan bir yayın hizmetidir.
+                    <br>
+                    <br>
+                    Tek bir reklam olmadan, istediğiniz kadar, istediğiniz zaman izleyebilirsiniz - hepsi aylık düşük
+                    bir ücret karşılığında. Her zaman keşfedilecek yeni bir şeyler var, üstelik her hafta yeni diziler
+                    ve filmler ekleniyor!
+                </p>
+            </div>
+
+            <div class="item" id="#item2">
+                <a href="#item2" class="title">
+                    <span>CSSflix'in maliyeti nedir?</span>
+                    <i class="icon"></i>
+                </a>
+                <p class="text">CSSflix'i akıllı telefonunuz, tabletiniz, Akıllı TV'niz, dizüstü bilgisayarınız veya
+                    yayın cihazınızda sabit bir aylık ücretle izleyin. Aylık plan ücretleri 26,99 TL ile 54,99 TL
+                    arasında değişmektedir. Ekstra maliyet yok, sözleşme yok.</p>
+            </div>
+            <div class="item" id="#item3">
+                <a href="#item3" class="title">
+                    <span>Nerede izleyebilirim?</span>
+                    <i class="icon"></i>
+                </a>
+                <p class="text">İstediğiniz yerde, istediğiniz zaman izleyin. Bilgisayarınızda CSSflix.com adresinden
+                    veya akıllı TV'ler, akıllı telefonlar, tabletler, medya oynatıcılar ve oyun konsolları dahil CSSflix
+                    uygulamasını sunan, internet bağlantılı herhangi bir cihazda anında izlemek için CSSflix hesabınızla
+                    oturum açın.</p>
+            </div>
+
+            <div class="item" id="#item4">
+                <a href="#item4" class="title">
+                    <span>Nasıl iptal ederim?</span>
+                    <i class="icon"></i>
+                </a>
+                <p class="text">CSSflix esnektir. Sinir bozucu hiçbir sözleşme ve taahhüt yoktur. Hesabınızı çevrimiçi
+                    olarak iki tıklamayla kolayca iptal edebilirsiniz. İptal ücreti yoktur - hesabınızı istediğiniz
+                    zaman başlatın veya durdurun.</p>
+            </div>
+
+            <div class="item" id="#item5">
+                <a href="#item5" class="title">
+                    <span>CSSflix'te ne izleyebilirim?</span>
+                    <i class="icon"></i>
+                </a>
+                <p class="text">CSSflix, uzun metrajlı filmler, belgeseller, diziler ve programlar, anime, ödüllü
+                    CSSflix orijinal içerikleri ve daha fazlasından oluşan kapsamlı bir kütüphaneye sahiptir.
+                    İstediğiniz her zaman, istediğiniz kadar çok şey izleyin.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="banner2">
+        <div class="box">
+            <div class="heading">
+                <p>İzlemeye hazır mısınız? Üyelik oluşturmak veya üyeliğinize erişmek için e-posta adresinizi girin.</p>
+            </div>
+            <div class="search">
+                <input type="text" name="" placeholder="E-posta adresi">
+                <a href="#">Başlayın <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-chevron-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                    </svg></a>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="one">
+            <ul class="items">
+                <li><a href="#">SSS</a></li>
+                <li><a href="#">Yatırımcı İlişkileri</a></li>
+                <li><a href="#">Kullanım Koşulları</a></li>
+                <li><a href="#">Bize Ulaşın</a></li>
+            </ul>
+
+            <ul class="items">
+                <li><a href="#">Yardım Merkezi</a></li>
+                <li><a href="#">İş İmkanları</a></li>
+                <li><a href="#">Gizlilik</a></li>
+                <li><a href="#">Hız Testi</a></li>
+            </ul>
+        </div>
+        <div class="one">
+            <ul class="items">
+                <li><a href="#">SSS</a></li>
+                <li><a href="#">Yatırımcı İlişkileri</a></li>
+                <li><a href="#">Kullanım Koşulları</a></li>
+                <li><a href="#">Bize Ulaşın</a></li>
+            </ul>
+
+            <ul class="items">
+                <li><a href="#">Yardım Merkezi</a></li>
+                <li><a href="#">İş İmkanları</a></li>
+                <li><a href="#">Gizlilik</a></li>
+                <li><a href="#">Hız Testi</a></li>
+            </ul>
+        </div>
+    </section>
+    <script type="text/javascript">
+        function displayBlock() {
+            document.getElementById("p1").classList.toggle("open");
+        }
+
+    </script>
+</body>
+
+</html>

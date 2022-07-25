@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSSFlix Kayıt Ol</title>
+    <link rel="shortcut icon" href="image/icons8-css-48.png" type="image/x-icon">
+    <style type="text/css">
+    body 
+{
+   background-image: url("image/Netflix_arka_plan2.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   margin:0;
+   padding:0;
+   overflow-x: hidden;
+}
+header
+{
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0,0,0,0.5);
+    color:red;
+    padding: 30px;
+}
+#mainDiv 
+{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#icDiv1 
+{
+    height: 600px;
+    width: 400px;
+    background-color: rgba(0,0,0,0.8);
+}
+#icDiv1 h2 
+{
+    margin-left: 10%;
+    color: white;
+}
+#txt1
+{   
+
+    border: none;
+    width: 80%;
+    height: 40px;
+    background-color:rgba(105, 105, 105, 0.6); 
+    border-radius: 5px;
+    color: white;
+    margin-left: 10%;
+    outline:none;
+
+}
+#txt2,#txt3,#txt4,#txt5,#txt6 
+{
+    border: none;
+    margin-top: 20px;
+    width: 80%;
+    height: 40px;
+    background-color:rgba(105, 105, 105, 0.6); 
+    border-radius: 5px;
+    margin-left: 10%;
+    outline:none;
+}
+#btn 
+{
+  
+    width: 80%;
+    height: 40px;
+    margin-top: 30px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+    display: block;
+    margin-left: 10%;
+
+}
+#txt1:hover,#txt2:hover,#txt3:hover,#txt4:hover,#txt5:hover,#txt6:hover
+{
+    border-bottom: 2px solid orange;
+} 
+#cbox 
+{   
+    margin-top: 30px;
+    margin-left: 10%;
+}
+ #a1
+{   
+    text-decoration: none;
+    color:white;
+}
+
+@media screen and (max-width:740px)
+{
+    #icDiv1 
+    {
+        background-color: black;
+        width: auto;
+        height: 100vh;
+    }
+    header 
+    {
+        background-color: black;
+    }
+}  
+    </style>
+
+
+</head>
+<body>
+    <header>
+        <img src="image/logo.png">
+    </header>
+    <div id="mainDiv">
+        <div id="icDiv1">
+            <form>
+            <h2>Kayıt Ol</h2>
+            <input id="txt1" type="text" value="" placeholder="Adınız"/>
+            <input id="txt2" type="text" value="" placeholder="Soyadiniz"/>
+            <input id="txt3" type="text" value="" placeholder="Telefon numaranız"/>
+            <input id="txt4" type="text" value="" placeholder="E-Posta adresiniz"/>
+            <input id="txt5" type="password" value="" placeholder="Şifre"7>
+            <input id="txt6" type="password" value="" placeholder="Şifre tekrar"/>
+            <input id="btn"  type="button" value="Kayıt Ol" />
+            <input id="cbox" type="checkbox" value=""><a id="a1" href="#">Okudum, onaylıyorum.</a>
+        </form>
+        </div>
+    </div>
+</body>
+</html>
